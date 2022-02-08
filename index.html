@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+        This is a website that has no AR content itself, but embeds an AR experience within an iframe.
+        
+        In the HEAD of your INNER AR page, add this script:
+        <script src="//cdn.8thwall.com/web/iframe/iframe-inner.js"></script>
+        -->
+
+    <!-- OUTER WEBSITE: Required in head of outer site -->
+    <script src="//cdn.8thwall.com/web/iframe/iframe.js"></script>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <style>
+      .split {
+        width: 100%;
+        height: 50%;
+        position: fixed;
+        left: 0;
+        right: 0;
+      }
+
+      .first {
+        top: auto;
+        bottom: 0;
+        background-color: red;
+      }
+
+      .second {
+        top: 0;
+        bottom: auto;
+        background-color: yellow;
+      }
+
+      #my-iframe {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="split first"></div>
+    <div class="split second">
+      <iframe
+        id="my-iframe"
+        allow="camera;microphone;gyroscope;accelerometer;xr-spatial-tracking;"
+        src="https://blanc.8thwall.app/cubeworld/"
+      >
+      </iframe>
+      <!-- <iframe
+        id="my-iframe"
+        allow="camera;microphone;gyroscope;accelerometer;xr-spatial-tracking;"
+        src="https://8w.8thwall.app/inner-ar"
+      >
+      </iframe> -->
+    </div>
+
+    <script>
+      window.XRIFrame.registerXRIFrame("my-iframe");
+    </script>
+  </body>
+</html>

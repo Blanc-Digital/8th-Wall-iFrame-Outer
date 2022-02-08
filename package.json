@@ -1,0 +1,20 @@
+{
+  "name": "8th-wall-iframe-outer",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:windows": "web\\serve\\bin\\serve.bat -d .",
+    "serve:mac": "./web/serve/bin/serve -d .",
+    "start": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
